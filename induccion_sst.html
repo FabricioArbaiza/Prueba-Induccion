@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Inducción SST</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f6f8;
+}
+
+.slide {
+    display: none;
+    padding: 40px;
+}
+
+.active {
+    display: block;
+}
+
+h1 {
+    color: #0b3c5d;
+}
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background: #0b3c5d;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="slide active">
+    <h1>GENERALIDADES DE SEGURIDAD Y SALUD EN EL TRABAJO</h1>
+    <p>Bienvenido al curso de inducción SST</p>
+</div>
+
+<div class="slide">
+    <h1>¿QUÉ ES UN PELIGRO?</h1>
+    <p>Condición con potencial de causar daño.</p>
+
+    <h1>¿QUÉ ES UN RIESGO?</h1>
+    <p>Combinación de probabilidad y severidad.</p>
+</div>
+
+<div class="slide">
+    <h1>ACTO INSEGURO</h1>
+    <p>Acción del trabajador que puede causar accidente.</p>
+
+    <h1>CONDICIÓN INSEGURA</h1>
+    <p>Situación peligrosa en el entorno laboral.</p>
+</div>
+
+<div class="slide">
+    <h1>ACCIDENTE</h1>
+    <p>Evento repentino que genera lesión.</p>
+
+    <h1>INCIDENTE</h1>
+    <p>Evento sin daño pero con potencial.</p>
+</div>
+
+<div class="slide">
+    <h1>PROCEDIMIENTO</h1>
+    <ol>
+        <li>Reportar el incidente</li>
+        <li>Atención médica</li>
+        <li>Comunicar a SST</li>
+        <li>Vigilancia</li>
+        <li>Reincorporación</li>
+    </ol>
+</div>
+
+<div class="nav">
+    <button onclick="prev()">Anterior</button>
+    <button onclick="next()">Siguiente</button>
+</div>
+
+<script>
+let current = 0;
+let slides = document.querySelectorAll('.slide');
+
+function showSlide(index){
+    slides.forEach(s => s.classList.remove('active'));
+    slides[index].classList.add('active');
+}
+
+function next(){
+    if(current < slides.length - 1){
+        current++;
+        showSlide(current);
+    }
+}
+
+function prev(){
+    if(current > 0){
+        current--;
+        showSlide(current);
+    }
+}
+</script>
+
+</body>
+</html>
